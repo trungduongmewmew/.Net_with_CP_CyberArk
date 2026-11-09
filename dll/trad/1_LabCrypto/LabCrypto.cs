@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -6,6 +6,7 @@ namespace LabCrypto
 {
     public static class Protector
     {
+        
         private static readonly byte[] Key = DeriveKey("LabPassphrase-2026-Demo");
 
         private static byte[] DeriveKey(string s)
@@ -14,6 +15,7 @@ namespace LabCrypto
                 return h.ComputeHash(Encoding.UTF8.GetBytes(s));
         }
 
+        
         public static string Encrypt(string plain)
         {
             using (AesManaged aes = new AesManaged())
@@ -33,6 +35,7 @@ namespace LabCrypto
             }
         }
 
+        
         public static string Decrypt(string b64)
         {
             byte[] all = Convert.FromBase64String(b64);
