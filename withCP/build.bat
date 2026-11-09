@@ -14,4 +14,4 @@ if %ERRORLEVEL% EQU 0 (
 ) else (
     echo Build that bai.
 )
-pause
+pause 
